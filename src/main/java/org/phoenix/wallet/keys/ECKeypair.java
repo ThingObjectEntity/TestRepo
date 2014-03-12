@@ -12,7 +12,7 @@ import com.google.bitcoin.crypto.EncryptedPrivateKey;
 import com.google.bitcoin.crypto.KeyCrypter;
 import com.google.bitcoin.crypto.KeyCrypterScrypt;
 
-
+//Manages an elliptic curve public/private keypair.
 public class ECKeypair extends ECPublicKey implements Keypair{
 
 	//Generate randomly 
