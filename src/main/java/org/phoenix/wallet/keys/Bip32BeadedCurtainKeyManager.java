@@ -1,6 +1,7 @@
 package org.phoenix.wallet.keys;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 
 import org.phoenix.passwords.PasswordFailException;
@@ -87,12 +88,12 @@ public class Bip32BeadedCurtainKeyManager extends KeyManagerAbstract implements 
 	}
 
 	@Override
-	public BeadedCurtainKeyManager export_BeadedCurtainManager() {
+	public BeadedCurtainKeyManager export_BeadedCurtainKeyManager() {
 		return new Bip32BeadedCurtainKeyManager(bckey.get(0).get(0).export_HDPublicKey());
 	}
 
 	@Override
-	public BeadedCurtainKeyManager export_private_BeadedCurtainManager() {
+	public BeadedCurtainKeyManager export_private_BeadedCurtainKeyManager() {
 		if(!has_private_keys()) return null;
 		return new Bip32BeadedCurtainKeyManager(bckey.get(0).get(0).export_HDPublicKey());
 	}
@@ -146,7 +147,7 @@ public class Bip32BeadedCurtainKeyManager extends KeyManagerAbstract implements 
 	}
 
 	@Override
-	public Iterable<PublicKey> get_keys() {
+	public Collection<PublicKey> get_keys() {
 		LinkedList<PublicKey> keys = new LinkedList<PublicKey>();
 		for(ArrayList<EncryptedDeterministicKey> chain : bckey) {
 			for(EncryptedDeterministicKey key : chain) {

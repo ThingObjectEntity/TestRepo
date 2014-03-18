@@ -20,7 +20,7 @@ import com.google.bitcoin.crypto.KeyCrypter;
 import com.google.bitcoin.crypto.KeyCrypterScrypt;
 
 
-public abstract class KeyManagerAbstract implements KeyManager{
+abstract class KeyManagerAbstract implements KeyManager{
 	private boolean has_private_keys;
 	private boolean password_protected;
 	private KeyCrypter crypter = null;
